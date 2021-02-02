@@ -1,17 +1,29 @@
 import React, {useState} from 'react'
 import { StyleSheet, View, Text, KeyboardAvoidingView } from 'react-native';
 import { Button, Input, Image } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 
 const  LoginScreen = ({navigation}) => {
 
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");\
+    const [password, setPassword] = useState("");
+
+    useEffect (()=>{
+        const unsubscribe =  auth.onAuthStateChanged((authUser)=> {
+            if(authUser){
+                navigation.replace("Home");
+            }
+        });
+
+        return unsubscribe;
+    }, []);
     const signIn = () => {
 
     }
 
     return (
         <KeyboardAvoidingView behavior='padding' style={styles.container}>
+            <StatusBar style="light" />
             <Image  
             style ={{width: 200, height: 200}}
             source={{
