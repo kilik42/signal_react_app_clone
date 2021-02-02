@@ -17,14 +17,14 @@ const RegisterScreen = ({navigation}) => {
        navigation.setOptions({
            headerBackTitle: "Back to Login",
 
-            
+
        })
     }, [navigation])
 
     const register = () => {
         auth.createUserWithEmailAndPassword(email, password)
         .then(authUser => {
-                authUser.user.update({
+                authUser.user.updateProfile({
                     displayName: name,
                     photoUrl: imageUrl || "https://st4.depositphotos.com/4329009/19956/v/600/depositphotos_199564354-stock-illustration-creative-vector-illustration-default-avatar.jpg"  ,
 

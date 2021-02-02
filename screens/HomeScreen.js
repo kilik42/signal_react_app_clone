@@ -1,13 +1,17 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView, SafeAreaView } from 'react-native'
 
 const HomeScreen = () => {
     return (
-        <View>
-            <Text>This is the homepage </Text>
 
 
-        </View>
+        <SafeAreaView>
+            <ScrollView>
+                
+            </ScrollView>
+
+
+        </SafeAreaView>
     )
 }
 
